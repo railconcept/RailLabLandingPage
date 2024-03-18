@@ -1,2 +1,2 @@
 # RailLabLandingPage
-Landing page for RailLab: a railway operations study software
+Landing page for RailLab: a railway operations study software.
