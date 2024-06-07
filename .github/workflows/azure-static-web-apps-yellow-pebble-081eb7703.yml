@@ -28,7 +28,11 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+<<<<<<< HEAD
           app_location: "RailLabLandingPage" # App source code path
+=======
+          app_location: "railconcept/RailLabLandingPage" # App source code path
+>>>>>>> 172c00f71d2de609804d16ca99c1d5c7b938aaad
           api_location: "" # Api source code path - optional
           output_location: "_site" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
