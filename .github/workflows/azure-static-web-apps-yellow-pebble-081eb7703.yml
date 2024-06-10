@@ -28,10 +28,27 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "_site" # App source code path
+          app_location: "/_site" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "_site" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+          
+      - name: Set up Ruby & Install Dependecies       
+          # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
+          # change this to (see https://github.com/ruby/setup-ruby#versioning):
+          # uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
+        with:
+            # bundle install really does take a long time with jekyll 4.X
+          bundler-cache: true
+          ruby-version: '3.2.2'
+
+          skip_app_build: true
+
+      
+
+      
+      
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
