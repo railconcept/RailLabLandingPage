@@ -45,7 +45,7 @@ jobs:
           skip_app_build: true
 
       -  uses: actions/setup-node@v4
-          with:
+         with:
     # Version Spec of the version to use in SemVer notation.
           node-version: 'lts/Hydrogen'
 
@@ -65,14 +65,7 @@ jobs:
 
     # Used to pull node distributions from https://github.com/actions/node-versions. 
     # Since there's a default, this is typically not supplied by the user. 
-    # When running this action on github.com, the default value is sufficient. 
-    # When running on GHES, you can pass a personal access token for github.com if you are experiencing rate limiting.
-    #
-    # We recommend using a service account with the least permissions necessary. Also
-    # when generating a new PAT, select the least scopes necessary.
-    #
-    # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
-    #
+    # When running this action on github.com, the default value is sufficient.
     # Default: ${{ github.server_url == 'https://github.com' && github.token || '' }}
           token: ''
 
@@ -102,14 +95,41 @@ jobs:
           always-auth: ''
 
       
-
-      
-      
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+  name: Build Jekyll site
+  on:
+   push:
+   branches: ["main"]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+build:
     runs-on: ubuntu-latest
-    name: Close Pull Request Job
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Build
+        uses: actions/jekyll-build-pages@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+      
+    close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+runs-on: ubuntu-latest
+      - name: Close Pull Request Job
     steps:
       - name: Close Pull Request
         id: closepullrequest
