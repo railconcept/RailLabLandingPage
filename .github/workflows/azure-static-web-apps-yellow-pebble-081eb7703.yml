@@ -35,7 +35,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
 
       - name: Set up Ruby & Install Dependencies
-        uses: ruby/setup-ruby@v3
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
           ruby-version: 'latest'
@@ -64,7 +64,7 @@ jobs:
         uses: actions/jekyll-build-pages@v1
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
 
   deploy:
     runs-on: ubuntu-latest
