@@ -75,7 +75,6 @@ jobs:
         uses: actions/deploy-pages@v4
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
