@@ -35,7 +35,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
 
       - name: Set up Ruby & Install Dependencies
-        uses: ruby/setup-ruby@v4
+        uses: ruby/setup-ruby@v3
         with:
           bundler-cache: true
           ruby-version: 'latest'
