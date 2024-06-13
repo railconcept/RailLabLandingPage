@@ -29,10 +29,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
+          cache: 'npm'
           node-version: 'lts/Hydrogen'
           check-latest: false
 
-      - run: JEKYLL_ENV=production bundle exec jekyll build
+          
+      - name: NPM_install   
+        run: npm ci
+
+      - name: Jekyll_build
+        run: JEKYLL_ENV=production bundle exec jekyll build
 
       - name: Build And Deploy
         id: builddeploy
