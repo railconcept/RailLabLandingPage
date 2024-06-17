@@ -65,3 +65,8 @@ collections:
     output: true
     permalink: /post/:path/
 
+collections: 
+  posts:
+    output: true
+    permalink: /posts
+    
