@@ -59,8 +59,3 @@ plugins:
 exclude:
   - package-lock.json
   - package.json
-
-  collections:
-  _site:
-    output: true
-    permalink: /_site/:path/
