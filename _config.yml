@@ -61,10 +61,7 @@ exclude:
   - package.json
 
 collections:
-  _site:
+   post:
     output: true
-    permalink: /_site/:path/
+    permalink: /post/:path/
 
-  _posts:
-    output: true
-    permalink: /_posts/:path/
