@@ -65,8 +65,11 @@ collections:
     output: true
     permalink: /post/:path/
 
-collections: 
-  posts:
+    broochure:
     output: true
-    permalink: /posts
+    permalink: /brochure/:path
+
+    index:
+    output: true
+    permalink : /index/:path
     
