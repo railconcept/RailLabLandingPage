@@ -63,9 +63,9 @@ exclude:
 collections:
    post:
     output: true
-    permalink: /_post/:path/
+    permalink: /post/:path/
 
-    index:
+   index:
     output: true
-    permalink : about/:path
+    permalink : /index/:path
     
