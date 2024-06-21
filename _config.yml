@@ -60,8 +60,17 @@ exclude:
   - package-lock.json
   - package.json
 
+
 collections:
-   index:
+  posts:
     output: true
-    permalink: /assets/:path
-    
+    permalink: /posts/:path
+
+  404.html:
+    output: true
+    permalink: /404.html/:path
+
+  about:
+    output: true
+    permalink: /about/:path
+
