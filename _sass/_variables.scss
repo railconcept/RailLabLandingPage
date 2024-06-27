@@ -17,7 +17,6 @@ $font-weight-light: 200;
 
 // Custom Border Variables
 $border-radius-xl: 1rem;
-
 // Gradient Variables
 
 $Blue: #1e30f3;
@@ -31,3 +30,23 @@ $pink: #e21e80;
     height: 70px;
 }
 
+.indication-couleur {
+    background: linear-gradient(#1e30f3, 100%, #e21e80);
+  }
+  .degrade-lineaire {
+    background: linear-gradient(#1e30f3, #e21e80);
+}
+
+.multiposition-stops {
+    background: linear-gradient(
+        to left, 
+        #1e30f3 100%,
+        #4a57ee 70%,
+        #757fec 50%,
+        #959ceb 30%,
+        #f3c8de 30%,
+        #f09bc7 50%,
+        #eb72b0 70%,
+        #e21e80 100%,
+    )
+}
