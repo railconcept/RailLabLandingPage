@@ -17,3 +17,17 @@ $font-weight-light: 200;
 
 // Custom Border Variables
 $border-radius-xl: 1rem;
+
+// Gradient Variables
+
+$Blue: #1e30f3;
+$pink: #e21e80;
+
+.title {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $Blue),
+    color-stop(100%, $pink));
+    background-image: -moz-linear-gradient(bottom, $pink 0%, $Blue 100%);
+    width: 100%;
+    height: 70px;
+}
+
