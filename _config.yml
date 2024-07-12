@@ -61,15 +61,26 @@ exclude:
   - package.json
 
 collections:
-   post:
+  pages:
     output: true
-    permalink: /post/:path/
+    permalink: /index/:home/
+  brochure:
+    output: true
+    permalink: /brochure/:brochure/
+  start_with_railLab:
+    output: true
+    permalink: /start_with_railLab/:start_with_railLab/
 
-    broochure:
-    output: true
-    permalink: /brochure/:path
 
-    index:
-    output: true
-    permalink : /index/:path
+navlinks:
+  -
+    href: "/index.html"
+    label: "index"
+  -
+    href: "/brochure.html"
+    label: "brochure"
+  -
+    href: "/start_with_railLab"
+    label: "start_with_railLab"
+
     
