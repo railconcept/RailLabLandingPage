@@ -1,4 +1,5 @@
 // Custom component for profile picture on the homepage
+@use "variables" as *;
 
 .profile {
     position: relative;
@@ -61,7 +62,6 @@
             fill: $primary;
         }
     }
-
 }
 
 // Responsive styling for profile photo component
@@ -70,93 +70,90 @@
     .profile {
         height: 60vw;
         width: 60vw;
-    
+
         .profile-img {
             height: 65vw;
         }
-    
+
         .dots-1 {
             width: 3vw;
             right: 1.5vw;
         }
-    
+
         .dots-2 {
             width: 3vw;
             right: -4vw;
         }
-    
+
         .dots-3 {
             width: 3vw;
             left: 1.5vw;
         }
-    
+
         .dots-4 {
             width: 3vw;
             left: -4vw;
         }
-    
     }
 }
 @include media-breakpoint-up(md) {
     .profile {
         height: 50vw;
         width: 50vw;
-    
+
         .profile-img {
             height: 55vw;
         }
-    
+
         .dots-1 {
             width: 3vw;
             right: 1.5vw;
         }
-    
+
         .dots-2 {
             width: 3vw;
             right: -4vw;
         }
-    
+
         .dots-3 {
             width: 3vw;
             left: 1.5vw;
         }
-    
+
         .dots-4 {
             width: 3vw;
             left: -4vw;
         }
-    
     }
 }
 @include media-breakpoint-up(lg) {
     .profile {
         height: 40vw;
         width: 40vw;
-    
+
         .profile-img {
             height: 45vw;
         }
-    
+
         .dots-1 {
             width: 1.5vw;
             right: 0.75vw;
         }
-    
+
         .dots-2 {
             width: 1.5vw;
             right: -2vw;
         }
-    
+
         .dots-3 {
             width: 1.5vw;
             left: 0.75vw;
         }
-    
+
         .dots-4 {
             width: 1.5vw;
             left: -2vw;
         }
-    
     }
 }
 

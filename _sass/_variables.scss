@@ -1,12 +1,15 @@
 // Variables
-
-// Override Bootstrap Colors
 $blue: #1e30f3;
 $pink: #e21e80;
 
+@forward "bootstrap/scss/bootstrap-utilities" with (
+    // Override Bootstrap Colors
+    $primary: $blue,
+    $secondary: $pink,
+);
+
 // Redefine Bootstrap State Colors
-$primary: $blue;
-$secondary: $pink;
+
 
 // Bootstrap Variable Functions
 $enable-negative-margins: true;

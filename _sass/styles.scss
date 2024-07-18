@@ -1,13 +1,18 @@
 // Import Variables
-@import "variables";
-
-// Import Bootstrap
-@import "bootstrap/scss/bootstrap.scss";
+@use "variables";
 
 // Import Global Theme Styles
-@import "global";
-@import "utilities";
+@use "global";
+@use "utilities";
 
 // Import Custom Component Styles
-@import "components/feature";
-@import "components/profile";
+@use "components/feature";
+@use "components/profile";
+
+@use "bootstrap-icons/font/bootstrap-icons" with (
+    $bootstrap-icons-font: "bootstrap-icons",
+    $bootstrap-icons-font-dir: "/assets/fonts"
+);
+
+// Import Bootstrap
+@use "bootstrap/scss/bootstrap";
