@@ -1,18 +1,43 @@
-// Import Variables
-@use "variables";
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
 
-// Import Global Theme Styles
-@use "global";
-@use "utilities";
+// 2. Include any default variable overrides here
+@import "bootstrap-overrides";
 
-// Import Custom Component Styles
-@use "components/feature";
-@use "components/profile";
+// 3. Include remainder of required Bootstrap stylesheets
+@import "bootstrap/scss/variables";
 
-@use "bootstrap-icons/font/bootstrap-icons" with (
-    $bootstrap-icons-font: "bootstrap-icons",
-    $bootstrap-icons-font-dir: "/assets/fonts"
-);
+// 4. Include any default map overrides here
 
-// Import Bootstrap
-@use "bootstrap/scss/bootstrap";
+// 5. Include remainder of required parts
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/helpers";
+
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/buttons";
+
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "bootstrap/scss/utilities/api";
+
+
+$bootstrap-icons-font: "bootstrap-icons";
+$bootstrap-icons-font-dir: "/assets/fonts";
+// 8. Add additional custom code here
+@import "bootstrap-icons/font/bootstrap-icons";
+
+
+@import "utilities";
+@import "components/feature";
+@import "components/profile";

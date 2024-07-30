@@ -35,6 +35,7 @@ sass:
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-node-module
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -82,3 +83,13 @@ navlinks:
   -
     href: "/start_with_railLab"
     label: "start_with_railLab"
+
+
+node_modules:
+  modules_dir: "node_modules/"
+  assets:
+    js: "js/"
+    css: "css/"
+  copy:
+  - source: "bootstrap-icons/font/fonts/"
+    target: "assets/fonts/"

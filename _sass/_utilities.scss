@@ -1,7 +1,5 @@
 // Custom utilities to extend Bootstrap's utility classes
 
-@use "variables" as *;
-
 // Background gradient utility for a primary to secondary gradient
 .bg-gradient-primary-to-secondary {
     background: $primary;

@@ -10,7 +10,13 @@
         </div>
     </div>
 </footer>
+
+
 <!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+{% if jekyll.environment == "production" %}
+<script src="{{ 'bootstrap/dist/js/bootstrap.bundle.min.js' | node_module_url }}"></script>
+{% else %}
+<script src="{{ 'bootstrap/dist/js/bootstrap.bundle.js' | node_module_url }}"></script>
+{% endif %}
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
