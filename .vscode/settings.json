@@ -42,7 +42,7 @@
             "commentIndent": true
         }
     },
-
+    
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": false
@@ -76,6 +76,7 @@
         "editor.formatOnSave": false
     },
 
+
     "files.associations": {
         "*.html": "liquid",
         "*.md": "liquid",
@@ -100,5 +101,6 @@
             "icon": "css",
             "extensions": ["css"]
         }
-    ]
+    ],
+    "prettier.experimentalTernaries": false
 }

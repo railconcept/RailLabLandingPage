@@ -4,9 +4,15 @@
         {% include head.html %}
     </head>
     <body>
-        {{ content }}
+        <header>
+            {% include nav.html %}
+        </header>
 
-        <footer id="footer"> 
+        <main>
+            {{ content }}
+        </main>
+
+        <footer> 
           {% include footer.html %}
         </footer>
     </body>

@@ -2,21 +2,29 @@
     <div class="container px-5">
         <div class="row align-items-center justify-content-between flex-column flex-sm-row">
             <div class="col-auto">
-                <span class="mx-1">&middot;</span>
-                <a class="small" href="#!">number : </a>
-                <span class="mx-1">&middot;</span>
-                <a class="small" href="#!">e-mail : </a>
+                <span class="mx-1">&middot;
+                </span>
+                <a
+                    class="small"
+                    href="#!">number :
+                </a>
+                <span class="mx-1">&middot;
+                </span>
+                <a
+                    class="small"
+                    href="#!">e-mail :
+                </a>
             </div>
         </div>
     </div>
 </footer>
 
 
-<!-- Bootstrap core JS-->
-{% if jekyll.environment == "production" %}
-<script src="{{ 'bootstrap/dist/js/bootstrap.bundle.min.js' | node_module_url }}"></script>
-{% else %}
-<script src="{{ 'bootstrap/dist/js/bootstrap.bundle.js' | node_module_url }}"></script>
-{% endif %}
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
+<!-- Bootstrap core JS -->
+{% if jekyll.environment == "production" -%}
+    <script src="{{ 'bootstrap/dist/js/bootstrap.bundle.min.js' | node_module_url }}"></script>
+{%- else -%}
+    <script src="{{ 'bootstrap/dist/js/bootstrap.bundle.js' | node_module_url }}"></script>
+{%- endif %}
+<!-- Core theme JS -->
+<script src="js/timeline.js"></script>
