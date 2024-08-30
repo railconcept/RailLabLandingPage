@@ -1,70 +1,61 @@
 "use strict";
 
-function outerHeight(el) {
-    const style = getComputedStyle(el);
-
-    return el.getBoundingClientRect().height + parseFloat(style.marginTop) + parseFloat(style.marginBottom);
-}
-
-function scrollTop(el, value) {
-    let win;
-    if (el.window === el) {
-        win = el;
-    } else if (el.nodeType === 9) {
-        win = el.defaultView;
-    }
-
-    if (value === undefined) {
-        return win ? win.pageYOffset : el.scrollTop;
-    }
-
-    if (win) {
-        win.scrollTo(win.pageXOffset, value);
-    } else {
-        el.scrollTop = value;
-    }
-}
-
-function offset(el) {
-    let box = el.getBoundingClientRect();
-    let docElem = document.documentElement;
-    return {
-        top: box.top + window.pageYOffset - docElem.clientTop,
-        left: box.left + window.pageXOffset - docElem.clientLeft,
-    };
-}
-
 function setupScroll() {
-    let agTimeline = document.querySelector(".js-timeline");
-    let agTimelineLine = document.querySelector(".js-timeline_line");
-    let agTimelineLineProgress = document.querySelector(".js-timeline_line-progress");
+    function scrollTop(el, value) {
+        let win = undefined;
+        if (el.window === el) {
+            win = el;
+        } else if (el.nodeType === Node.DOCUMENT_NODE) {
+            win = el.defaultView;
+        }
 
-    let timeLineItems = document.querySelectorAll(".js-timeline_item");
+        if (value === undefined) {
+            return win ? win.pageYOffset : el.scrollTop;
+        }
 
-    let agOuterHeight = window.offsetHeight;
-    let f = -1;
+        if (win) {
+            win.scrollTo(win.pageXOffset, value);
+        } else {
+            el.scrollTop = value;
+        }
+    }
+
+    const timeline = document.querySelector(".js-timeline");
+    const timelineLine = document.querySelector(".js-timeline_line");
+    const timelineLineProgress = document.querySelector(".js-timeline_line-progress");
+    const timeLineItems = document.querySelectorAll(".js-timeline_item");
+
+    let oldWindowScrollTop = -1;
     let agFlag = false;
-    let agPosY = 0;
+    let windowScrollTop = 0;
 
     function fnUpdateProgress() {
-        let last = timeLineItems[timeLineItems.length - 1];
-        let agTop = offset(last.querySelector(".js-timeline-card_point-box")).top;
+        const timelineBox = timeline.getBoundingClientRect();
 
-        let i = agTop + agPosY - scrollTop(window);
-        let a = offset(agTimelineLineProgress).top + agPosY - scrollTop(window);
+        // header / navbar height
+        const offsetTimelineTopRelativeToDocument = windowScrollTop + timelineBox.top;
+        // footer height
+        const offsetTimelineBottomRelativeToDocument = document.documentElement.scrollHeight - (timelineBox.bottom + windowScrollTop);
 
-        let n = agPosY - a + agOuterHeight / 2;
-        let aaa = i <= agPosY + agOuterHeight / 2 && (n = i - a);
+        // if you want to increase of decrease the progress part of the timeline adjust this ratio
+        const viewportHeightProgressLineRatio = 0.4;
+        const baseLinePositionRelativeToViewport = viewportHeightProgressLineRatio * window.innerHeight;
+        const progressBarHeightRelativeToTimeLine = baseLinePositionRelativeToViewport - offsetTimelineTopRelativeToDocument + windowScrollTop;
 
-        agTimelineLineProgress.style.height = n + "px";
+        timelineLine.style.height = timeline.scrollHeight + offsetTimelineBottomRelativeToDocument - ((1 - viewportHeightProgressLineRatio) * window.innerHeight) + "px";
+        timelineLineProgress.style.height = progressBarHeightRelativeToTimeLine + "px";
 
+        // if you want to make elements appear sooner or later adjust this ratio
+        const viewportHeightRatioForActiveTrigger = 0.4;
+        
         timeLineItems.forEach((el, i) => {
-            let agTop = offset(el.querySelector(".js-timeline-card_point-box")).top;
+            const minPositionToBeActive = window.innerHeight * viewportHeightRatioForActiveTrigger; 
+            const elementTop = el.getBoundingClientRect().top;
 
-            if (agTop + agPosY - scrollTop(window) < agPosY + 0.5 * agOuterHeight) {
-                el.classList.add("js-ag-active");
+            if (elementTop <= minPositionToBeActive) {
+                el.classList.add("active");
             } else {
-                el.classList.remove("js-ag-active");
+                el.classList.remove("active");
             }
         });
     }
@@ -72,40 +63,23 @@ function setupScroll() {
     function fnUpdateWindow() {
         agFlag = false;
 
-        let first = timeLineItems[0];
-        let firstTimelinePointBox = first.querySelector(".js-timeline-card_point-box");
-
-        let last = timeLineItems[timeLineItems.length - 1];
-        let lastTimelinePointBox = last.querySelector(".js-timeline-card_point-box");
-
-        agTimelineLine.style.top = offset(firstTimelinePointBox).top - offset(first).top;
-        agTimelineLine.style.bottom = offset(agTimeline).top + outerHeight(agTimeline) - offset(lastTimelinePointBox).top;
-
-        if (f !== agPosY) {
-            f = agPosY;
+        if (oldWindowScrollTop !== windowScrollTop) {
+            oldWindowScrollTop = windowScrollTop;
             fnUpdateProgress();
         }
     }
-
-    function fnUpdateFrame() {
+    function refresh() {
+        windowScrollTop = scrollTop(window);
         if (agFlag === false) {
             requestAnimationFrame(fnUpdateWindow);
             agFlag = true;
         }
     }
 
-    function fnOnScroll() {
-        agPosY = scrollTop(window);
-        fnUpdateFrame();
-    }
+    window.addEventListener("scroll", refresh);
+    window.addEventListener("resize", refresh);
 
-    function fnOnResize() {
-        agPosY = scrollTop(window);
-        fnUpdateFrame();
-    }
-
-    window.addEventListener("scroll", fnOnScroll);
-    window.addEventListener("resize", fnOnResize);
+    refresh();
 }
 
 function ready(fn) {
