@@ -1,10 +1,7 @@
 
-.js-timeline {
-
-    .js-timeline_line {
-
-
-        .js-timeline-bookmark-container > * {
+.raillab-timeline {
+    .raillab-timeline-line {
+        .raillab-timeline-bookmark-container > * {
             position: absolute;
             transform: translateX(-50%);
             left: 50%;
@@ -15,17 +12,15 @@
         } 
         
         max-width: 12px;
-        .js-timeline_line-progress {
+
+        .raillab-timeline-line-progress {
             width: 50%
         }
 
     }
-
-    .js-timeline_item {
-
-
-        .js-timeline-card_point-box {
-
-        }
+    
+    .raillab-timeline-item {
+        margin: 4%;
     }
+
 }

@@ -20,18 +20,19 @@ function setupScroll() {
         }
     }
 
-    const timeline = document.querySelector(".js-timeline");
-    const timelineLine = document.querySelector(".js-timeline_line");
-    const timelineLineProgress = document.querySelector(".js-timeline_line-progress");
+    const timeline = document.querySelector(".raillab-timeline");
+    const timelineLine = document.querySelector(".raillab-timeline-line");
+    const timelineLineProgress = document.querySelector(".raillab-timeline-line-progress");
 
-    const timeLineItems = Array.from(document.querySelectorAll(".js-timeline-items-container > *"));
-    const bookmarks = Array.from(document.querySelectorAll(".js-timeline-bookmark-container > *"));
+    const timeLineItems = Array.from(document.querySelectorAll(".raillab-timeline-items-container > *"));
+    const bookmarks = Array.from(document.querySelectorAll(".raillab-timeline-bookmark-container > *"));
 
-    const bookmarksWithItems = bookmarks.map(
-        (bookmark, i) => ({
-            bookmark: bookmark,
-            item: timeLineItems[i]
-        }));
+    const bookmarksWithItems = bookmarks
+        .map((bookmark, i) => ({
+                bookmark: bookmark,
+                item: timeLineItems[i]
+            }))
+        .filter(x => x.bookmark && x.item);
 
     console.log(bookmarksWithItems);
 
@@ -45,11 +46,9 @@ function setupScroll() {
         const offsetTimelineTopRelativeToDocument = windowScrollTop + timelineBox.top;
 
         bookmarksWithItems.forEach(itemWithBookmark => {
-            if (itemWithBookmark.bookmark && itemWithBookmark.item) {
-                const itemBox = itemWithBookmark.item.getBoundingClientRect();
-                const bookmarkTop = itemBox.top - offsetTimelineTopRelativeToDocument + windowScrollTop;
-                itemWithBookmark.bookmark.style.top = bookmarkTop + "px";
-            }
+            const itemBox = itemWithBookmark.item.getBoundingClientRect();
+            const bookmarkTop = itemBox.top - offsetTimelineTopRelativeToDocument + windowScrollTop;
+            itemWithBookmark.bookmark.style.top = bookmarkTop + "px";
         });
 
     }
