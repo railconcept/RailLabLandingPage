@@ -6,10 +6,29 @@
             transform: translateX(-50%);
             left: 50%;
 
-            &.active {
-                color:deeppink;
+            
+            &.circle{
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                background-color: $body-bg;
+                border-radius: 60%;
+
+                &:before {
+                    content: 'beep boop';
+                }
+
+                &.active {
+                    color:deeppink;
+                    width: 20px;
+                    background-color: #7c5bca;
+                    &:before {
+                        content: 'boop beep';
+                    }
+                }
             }
         } 
+
         
         max-width: 12px;
 
@@ -23,13 +42,4 @@
         margin: 4%;
     }
 
-}
-
-.circle{
-	position: absolute;
-	width: 60px;
-	height: 60px;
-	background-color: #5b88ca;
-	border-radius: 60%;
-	
 }
