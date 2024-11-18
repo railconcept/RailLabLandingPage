@@ -3,11 +3,11 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-      - main
+      - provisional
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - main
+      - provisional
 
 jobs:
   build_and_deploy_job:
@@ -20,25 +20,8 @@ jobs:
           submodules: true
           lfs: false
 
-      - name: Set up Ruby & Install Dependencies
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-          ruby-version: 'ruby'
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          cache: 'npm'
-          node-version: 'lts/Hydrogen'
-          check-latest: false
-
-          
-      - name: NPM_install   
-        run: npm ci
-
-      - name: Jekyll_build
-        run: JEKYLL_ENV=production bundle exec jekyll build
+      - name: Copy files to output folder
+        run: mkdir -p _site/ && cp -r css download images video browserconfig.xml favicon.ico index.html manifest.json robots.txt sitemap.xml _site/
 
       - name: Build And Deploy
         id: builddeploy
