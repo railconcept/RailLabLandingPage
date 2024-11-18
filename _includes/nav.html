@@ -1,0 +1,29 @@
+<!-- Navigation -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-xl">
+        <span class="fw-bolder text-primary">RailLab</span>
+        <div id="navbarToggler" class="collapse navbar-collapse">
+            <ul class="navbar-nav my-2 ms-auto mb-2 mb-lg-0 mx-5">
+                {% if page.permalink == "/" %}
+                    <a class="nav-link active" href="/">Home</a>
+                {%  else %}
+                    <a class="nav-link" href="/">Home</a>
+                {% endif %}
+
+                {% if page.permalink == "/brochure" %}
+                    <a class="nav-link active" href="/brochure">Brochure</a>
+                    {%  else %}
+                    <a class="nav-link" href="/brochure">Brochure</a>
+                {% endif %}
+
+                {% if page.permalink == "/start_with_raillab" %}
+                    <a class="nav-link active" href="/start_with_raillab">Start with Raillab</a>
+                    {%  else %}
+                    <a class="nav-link" href="/start_with_raillab">Start with Raillab</a>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+

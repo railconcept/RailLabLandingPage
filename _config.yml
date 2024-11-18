@@ -18,14 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: RailLab
+title: Your awesome title
 email: your-email@example.com
-#description: >- # this means to ignore newlines until "baseurl:"
- # Write an awesome description for your new site here. You can edit this
-  #line in _config.yml. It will appear in your document head meta (for
-  #Google search results) and in your feed.xml site description.
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yellow-pebble-081eb7703.5.azurestaticapps.net" # the base hostname & protocol for your site, e.g. http://example.com
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 sass:
   sass_dir: _sass
@@ -35,6 +35,7 @@ sass:
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-node-module
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -60,17 +61,35 @@ exclude:
   - package-lock.json
   - package.json
 
-
 collections:
-  posts:
+  pages:
     output: true
-    permalink: /posts/:path
-
-  404.html:
+    permalink: /index/:home/
+  brochure:
     output: true
-    permalink: /404.html/:path
-
-  about:
+    permalink: /brochure/:brochure/
+  start_with_railLab:
     output: true
-    permalink: /about/:path
+    permalink: /start_with_railLab/:start_with_railLab/
 
+
+navlinks:
+  -
+    href: "/index.html"
+    label: "index"
+  -
+    href: "/brochure.html"
+    label: "brochure"
+  -
+    href: "/start_with_railLab"
+    label: "start_with_railLab"
+
+
+node_modules:
+  modules_dir: "node_modules/"
+  assets:
+    js: "js/"
+    css: "css/"
+  copy:
+  - source: "bootstrap-icons/font/fonts/"
+    target: "assets/fonts/"

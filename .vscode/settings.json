@@ -1,0 +1,106 @@
+{
+    "azureFunctions.deploySubpath": "api/bin/Release/net8.0/publish",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "publish",
+    "files.exclude": {
+        "_site/": false
+    },
+    "liquid.engine": "jekyll",
+    "html.format.wrapAttributes": "aligned-multiple",
+    "html.format.wrapLineLength": 240,
+    "html.format.enable": false,
+
+    "prettier.htmlWhitespaceSensitivity": "strict",
+    "prettier.printWidth": 160,
+    "prettier.quoteProps": "consistent",
+    "prettier.tabWidth": 4,
+    "prettier.bracketSameLine": true,
+
+    "liquid.format.rules": {
+        "preset": "recommended",
+        "endNewline": true,
+        "style": {
+            "commentIndent": true,
+            "commentNewline": true
+        },
+
+        // indentation level, defaults to the vscode tabSize
+        "indentSize": 4,
+        "wrap": 0,
+        "script": {
+            "commentNewline": true,
+            "commentIndent": true
+        },
+        "liquid": {
+            "commentNewline": true,
+            "commentIndent": true
+        },
+        "markup": {
+            "commentNewline": true,
+            "commentIndent": true
+        }
+    },
+    
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+    },
+
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+    },
+
+    "[liquid]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+    },
+
+    "[liquid-css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+    },
+
+    "[liquid-javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+    },
+
+
+    "files.associations": {
+        "*.html": "liquid",
+        "*.md": "liquid",
+        "*.js": "liquid-javascript",
+        "*.css": "liquid-css"
+    },
+    "editor.suggest.showIcons": true,
+    "vsicons.associations.files": [
+        {
+            "icon": "js",
+            "extensions": ["js"]
+        },
+        {
+            "icon": "html",
+            "extensions": ["html"]
+        },
+        {
+            "icon": "markdown",
+            "extensions": ["md"]
+        },
+        {
+            "icon": "css",
+            "extensions": ["css"]
+        }
+    ],
+    "prettier.experimentalTernaries": false
+}
