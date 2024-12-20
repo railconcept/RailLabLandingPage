@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /images/
 Disallow: /download/
 
-Sitemap: https://www.raillab.fr/sitemap.xml
+Sitemap: https://www.railconcept.fr/sitemap.xml
