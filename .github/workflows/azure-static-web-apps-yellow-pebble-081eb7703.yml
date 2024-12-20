@@ -21,7 +21,7 @@ jobs:
           lfs: false
 
       - name: Copy files to output folder
-        run: mkdir -p _site/ && cp -r css download images video browserconfig.xml favicon.ico index.html manifest.json robots.txt sitemap.xml _site/
+        run: mkdir -p _site/ && cp -r css download images video browserconfig.xml favicon.ico index.html fonctionnalites.html manifest.json robots.txt sitemap.xml _site/
 
       - name: Build And Deploy
         id: builddeploy
