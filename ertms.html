@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ertms</title>
+<meta name="referrer" content="same-origin">
+<meta name="description" content="Simulation de la signalisation ERTMS / ETCS niveaux 1 - 2 - 3 hybride">
+<link rel="canonical" href="https://www.railconcept.fr/ertms.html">
+<meta name="robots" content="noarchive,max-image-preview:large">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="images/a/apple-touch-icon-af374b.png">
+<meta name="msapplication-TileImage" content="images/4/mstile-144x144-4e2d6c.png">
+<link rel="manifest" href="manifest.json" crossOrigin="use-credentials">
+<meta name="keywords" content="RailLab exploitation ferroviaire signalisation r&eacute;gularit&eacute; robustesse innovation capacit&eacute; planification simulation">
+<meta name="author" content="Rail Concept">
+<link rel="stylesheet" href="css/site.a9d3c7.css" type="text/css">
+<link rel="stylesheet" href="css/plyr3.2581a7.css" type="text/css">
+</head>
+<body style="--sw:0px" id="b1">
+<script>!function(){var e=document.body;"0"===e.style.getPropertyValue("--sw")&&e.style.setProperty("--sw","0px");var t=document.createElement("P");t.innerHTML="&nbsp;",t.style.cssText="position:fixed;visible:hidden;font-size:100px;zoom:1",e.appendChild(t);var n=function(t){return function(){var n=Math.trunc(1e4/parseFloat(window.getComputedStyle(t).getPropertyValue("font-size")))/100;n!=e.style.getPropertyValue("--f")&&e.style.setProperty("--f",n)}}(t);if("ResizeObserver"in window)new ResizeObserver(n).observe(t);else if("requestAnimationFrame"in window){var r=function(){n(),requestAnimationFrame(r)};requestAnimationFrame(r)}else setInterval(n,100)}()</script>
+
+<script>/firefox/i.test(navigator.userAgent)||function(){var e=function(){var e=document.body,t=window.innerWidth,n=getComputedStyle(e),r=n.getPropertyValue("--s");if(320==r){if(t<320)return;t=Math.min(479,t)}else if(480==r){if(t<480)return;t=Math.min(610,t)}else t=r;var i=Math.trunc(t/r*1e4)/1e4;i!=n.getPropertyValue("--z")&&e.style.setProperty("--z",i)};window.addEventListener?window.addEventListener("resize",e,!0):window.onscroll=e,e()}();</script>
+
+<div class="c73">
+<div class="v21 ps202 s194 c74 z197">
+<div class="ps202 v22 s195">
+<div class="v21 ps203 s196">
+<div class="v21 ps204 s197">
+<div class="v21 ps205 s198 c75 z198"></div>
+<div class="v23 ps206 s199 c76 z199">
+<a href="https://www.railconcept.fr" target="_blank" rel="noopener" class="a9 f49">Rail Concept</a>
+</div>
+</div>
+<div class="v21 ps207 s200">
+<div class="v21 ps208 s201 c77 z200"></div>
+<div class="v23 ps206 s202 c78 z201">
+<a href="index.html" class="a9 f49">Pr&eacute;sentation</a>
+</div>
+</div>
+<div class="v21 ps209 s203">
+<div class="v21 ps210 s204">
+<div class="v21 ps204 s205">
+<div class="v21 ps205 s198 c79 z202"></div>
+<div class="v23 ps206 s206 c80 z203">
+<a href="download/plaquette-raillab-v1-06-2024.pdf" target="_blank" rel="noopener" class="a9 f49">Plaquette</a>
+</div>
+</div>
+<div class="v21 ps211 s207">
+<div class="v21 ps204 s198 c81 z204"></div>
+<div class="v24 ps212 s11 z205">
+<ul class="menu-dropdown-1 v21 ps204 s12 m5" id="m10">
+<li class="v22 ps204 s11">
+<div class="menu-content mcv5">
+<div class="v21 ps204 s13 c82 z206">
+<div class="v21 ps213 s208 c11 z207">
+<p class="p62 f50">Fonctionnalit&eacute;s</p>
+</div>
+</div>
+</div>
+<ul class="menu-dropdown-1 v25 ps204 s15 m5 z208">
+<li class="v22 ps204 s16">
+<a href="fonctionnalites.html" class="ml5"><div class="menu-content mcv5"><div class="v21 ps204 s17 c82 z206"><div class="v21 ps214 s209 c11 z207"><p class="p62 f50">Vue d'ensemble</p></div></div></div></a>
+</li>
+<li class="v22 ps204 s16">
+<a href="#" class="ml5"><div class="menu-content mcv5"><div class="v21 ps204 s17 c82 z206"><div class="v21 ps214 s209 c11 z207"><p class="p62 f50">ERTMS</p></div></div></div></a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="v21 ps215 s210 c11 z209">
+<p class="p62 f51">ERTMS</p>
+</div>
+</div>
+<div class="v21 ps216 s211">
+<div class="v21 ps205 s212 c83 z210"></div>
+<div class="v23 ps206 s213 c84 z211">
+<a href="index.html#anchor1" class="a9 f49">Contact</a>
+</div>
+</div>
+<div class="v21 ps217 s214">
+<div class="v21 ps218 s198 c85 z212"></div>
+<div class="v24 ps212 s11 z213">
+<ul class="menu-dropdown v21 ps204 s12 m5" id="m9">
+<li class="v22 ps204 s11">
+<div class="menu-content mcv5">
+<div class="v21 ps204 s13 c82 z206">
+<div class="v21 ps213 s208 c11 z207">
+<p class="p62 f50">English</p>
+</div>
+</div>
+</div>
+<ul class="menu-dropdown v25 ps204 s20 m5 z208">
+<li class="v22 ps204 s16">
+<a href="download/plaquette-raillab-v1-06-2024-en-1.pdf" class="ml5"><div class="menu-content mcv5"><div class="v21 ps204 s17 c82 z206"><div class="v21 ps214 s209 c11 z207"><p class="p62 f50">Leaflet</p></div></div></div></a>
+</li>
+<li class="v22 ps204 s16">
+<a href="raillab-introduction.html" class="ml5"><div class="menu-content mcv5"><div class="v21 ps204 s17 c82 z206"><div class="v21 ps214 s209 c11 z207"><p class="p62 f50">Introduction</p></div></div></div></a>
+</li>
+<li class="v22 ps204 s16">
+<a href="features.html" class="ml5"><div class="menu-content mcv5"><div class="v21 ps204 s17 c82 z206"><div class="v21 ps214 s209 c11 z207"><p class="p62 f50">Features</p></div></div></div></a>
+</li>
+<li class="v22 ps204 s16">
+<a href="ertms-english.html" class="ml5"><div class="menu-content mcv5"><div class="v21 ps204 s17 c82 z206"><div class="v21 ps214 s209 c11 z207"><p class="p62 f50">ERTMS</p></div></div></div></a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="v21 ps219 s215 c86 z214"></div>
+<div class="v21 ps220 s216 c87 z215"></div>
+<div class="ps220 v22 s217">
+<div class="v21 ps204 s32 c11 z216">
+<div class="player un53 pl5">
+<video preload="metadata" playsinline muted loop class="vd5">
+<source src="video/raillab-ertms.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+<div class="v21 ps221 s218">
+<div class="v21 ps222 s210 c11 z217">
+<p class="p62 f52">L&rsquo;ERTMS dans RailLab</p>
+</div>
+<div class="v21 ps223 s219 c11 z218">
+<p class="p62 f52">Projets ERTMS sous RailLab</p>
+</div>
+</div>
+<div class="v21 ps224 s220">
+<div class="v21 ps225 s221">
+<div class="v21 ps204 s222 c11 z219">
+<p class="p63 f53">Rail Concept maitrise les sp&eacute;cificit&eacute;s de la signalisation ERTMS. Nous avons accompagn&eacute; SNCF R&eacute;seau pour d&eacute;finir la strat&eacute;gie de d&eacute;ploiement de la signalisation ERTMS niveau 2 sur le r&eacute;seau conventionnel et a r&eacute;alis&eacute; de nombreuses &eacute;tudes d&rsquo;exploitation sur des projets ERTMS. Fort de cette exp&eacute;rience, Rail Concept a d&eacute;velopp&eacute; cette signalisation dans RailLab pour la mod&eacute;lisation des grilles horaires et les simulations. Tous les niveaux sont int&eacute;gr&eacute;s : niveau 1 - 2 - 3 avec les cantons virtuels et la d&eacute;tection de l&rsquo;int&eacute;grit&eacute; des trains.</p>
+<p class="p63 f53">Les fonctionnalit&eacute;s ERTMS dans RailLab ont &eacute;t&eacute; d&eacute;velopp&eacute;es selon les sp&eacute;cificit&eacute;s de l&rsquo;ERA (European Union Agency for Railways) et elles sont en tout point identiques. Les param&eacute;trages des calculs sont donc conformes aux standards europ&eacute;ens.</p>
+</div>
+<div class="v21 ps226 s210 c11 z220">
+<p class="p62 f52">Mod&eacute;lisation</p>
+</div>
+<div class="v21 ps204 s223 c11 z221">
+<p class="p63 f53">La mod&eacute;lisation de la signalisation ERTMS s&rsquo;effectue &agrave; travers diff&eacute;rents domaines :</p>
+<ul class="ps33">
+<li data-marker="&squf;" class="p64 f53"><span class="f53"> </span><span class="f53">L&rsquo;infrastructure</span></li>
+<li data-marker="&squf;" class="p64 f53"><span class="f53"> </span><span class="f53">Le mat&eacute;riel roulant</span></li>
+<li data-marker="&squf;" class="p64 f53"><span class="f53"> </span><span class="f53">Les param&egrave;tres de calcul</span></li>
+</ul>
+</div>
+<div class="v21 ps227 s224 c11 z222">
+<p class="p62 f54">Infrastructure</p>
+</div>
+<div class="v21 ps228 s225 c11 z223">
+<p class="p63 f53">En ETCS niveau 1 et 2, la signalisation est repr&eacute;sent&eacute;e sous forme de rep&egrave;res et de circuits de voie (joint de zone).</p>
+<p class="p63 f53">En ETCS 3, la signalisation inclut en plus l&rsquo;option de d&eacute;tection de l&rsquo;int&eacute;grit&eacute; des trains permettant d&rsquo;utiliser les cantons virtuels &agrave; l&rsquo;int&eacute;rieur des cantons physiques.</p>
+</div>
+<div class="v21 ps229 s224 c11 z224">
+<p class="p62 f54">Mat&eacute;riel roulant</p>
+</div>
+<div class="v21 ps230 s226 c11 z225">
+<p class="p63 f53">Les caract&eacute;ristiques des mat&eacute;riels roulants int&egrave;grent les param&egrave;tres ERTMS permettant de r&eacute;aliser le calcul de marche et le calcul des courbes de freinage utilis&eacute;es dans le calcul des conflits (freinage de service ou freinage d&rsquo;urgence). Ces param&egrave;tres sont &agrave; d&eacute;finir en fonction du type de train (Gamma ou Lambda).</p>
+</div>
+</div>
+<div class="v21 ps231 s227">
+<div class="v21 ps204 s228 c11 z226">
+<picture>
+<source srcset="images/2/ertms-france-306.webp 2x" type="image/webp" media="(max-width:479px)">
+<source srcset="images/0/ertms-france-306.png 2x" media="(max-width:479px)">
+<source srcset="images/c/ertms-france-460.webp 2x" type="image/webp" media="(max-width:959px)">
+<source srcset="images/l/ertms-france-460.png 2x" media="(max-width:959px)">
+<source srcset="images/e/ertms-france-460.webp 1x, images/p/ertms-france-920.webp 2x" type="image/webp" media="(max-width:1199px)">
+<source srcset="images/t/ertms-france-460.png 1x, images/a/ertms-france-920.png 2x" media="(max-width:1199px)">
+<source srcset="images/h/ertms-france-575.webp 1x, images/a/ertms-france-1150.webp 2x" type="image/webp" media="(min-width:1200px)">
+<source srcset="images/l/ertms-france-575.png 1x, images/j/ertms-france-1150.png 2x" media="(min-width:1200px)">
+<img src="images/j/ertms-france-1150.png" class="i41">
+</picture>
+</div>
+<div class="v21 ps232 s210 c11 z227">
+<p class="p62 f52">Ato&ucirc;ts</p>
+</div>
+<div class="v21 ps233 s229 c11 z228">
+<p class="p63 f53">La signalisation ERTMS est int&eacute;gr&eacute;e de mani&egrave;re tr&egrave;s pr&eacute;cise dans RailLab. Cette finesse dans la mod&eacute;lisation permet :</p>
+<ul class="ps33">
+<li data-marker="&squf;" class="p64 f53"><span class="f53"> </span><span class="f53">de mod&eacute;liser tous les niveaux ERTMS et les transitions de signalisation sur une infrastructure</span></li>
+<li data-marker="&squf;" class="p64 f53"><span class="f53"> </span><span class="f53">de calculer les distances d&rsquo;arr&ecirc;t et l&rsquo;espacement minimal entre chaque train</span></li>
+<li data-marker="&squf;" class="p64 f53"><span class="f53"> </span><span class="f53">de calculer les conflits de signalisation</span></li>
+<li data-marker="&squf;" class="p64 f53"><span class="f53"> </span><span class="f53">de construire des grilles horaires fiables</span></li>
+<li data-marker="&squf;" class="p64 f53"><span class="f53"> </span><span class="f53">de simuler des perturbations sur les plans de transport</span></li>
+</ul>
+</div>
+<div class="v21 ps234 s230 c11 z229">
+<p class="p62 f52">Simulation</p>
+</div>
+<div class="v21 ps235 s224 c11 z230">
+<p class="p62 f54">Calcul des conflits</p>
+</div>
+<div class="v21 ps236 s231 c11 z231">
+<p class="p63 f53">RailLab permet de calculer les conflits de signalisation entre trains en ERTMS sur tous les niveaux. Cette fonctionnalit&eacute; permet de construire des grilles horaires robustes sans conflits. Le calcul de conflit se base sur la mod&eacute;lisation pr&eacute;cise de l&rsquo;infrastructure et sur les param&egrave;tres d&eacute;taill&eacute;s des courbes de freinage des mat&eacute;riels roulants et des param&egrave;tres de calcul g&eacute;n&eacute;raux ERTMS.</p>
+</div>
+<div class="v21 ps237 s224 c11 z232">
+<p class="p62 f54">Simulation dynamique</p>
+</div>
+</div>
+</div>
+<div class="v21 ps238 s232">
+<div class="v21 ps204 s233">
+<div class="v21 ps239 s234 c11 z233">
+<a href="images/r/coef-ertms-mr-1197.jpg" data-webp="images/e/coef-ertms-mr-1197.webp" class="a10 un57"><picture><source srcset="images/6/coef-ertms-mr-638.webp 2x" type="image/webp" media="(max-width:479px)"><source srcset="images/0/coef-ertms-mr-638.jpg 2x" media="(max-width:479px)"><source srcset="images/n/coef-ertms-mr-958.webp 2x" type="image/webp" media="(max-width:959px)"><source srcset="images/p/coef-ertms-mr-958.jpg 2x" media="(max-width:959px)"><source srcset="images/l/coef-ertms-mr-460.webp 1x, images/e/coef-ertms-mr-920.webp 2x" type="image/webp" media="(max-width:1199px)"><source srcset="images/8/coef-ertms-mr-460.jpg 1x, images/e/coef-ertms-mr-920.jpg 2x" media="(max-width:1199px)"><source srcset="images/n/coef-ertms-mr-575.webp 1x, images/h/coef-ertms-mr-1150.webp 2x" type="image/webp" media="(min-width:1200px)"><source srcset="images/p/coef-ertms-mr-575.jpg 1x, images/l/coef-ertms-mr-1150.jpg 2x" media="(min-width:1200px)"><img src="images/l/coef-ertms-mr-1150.jpg" loading="lazy" class="i42"></picture></a>
+</div>
+<div class="v21 ps240 s224 c11 z234">
+<p class="p62 f54">Param&egrave;tres de calcul</p>
+</div>
+<div class="v21 ps241 s235 c11 z235">
+<p class="p63 f53">Diff&eacute;rents param&egrave;tres entrent en jeu pour calibrer le calcul de marche et le calcul des distances de freinage. Ces param&egrave;tres permettent de d&eacute;finir les temps et les distances suppl&eacute;mentaires utilis&eacute;s dans le calcul de conflits.</p>
+</div>
+</div>
+<div class="v21 ps242 s236">
+<div class="v21 ps243 s237 c11 z236">
+<p class="p63 f53">RailLab permet de simuler un plan de transport de mani&egrave;re dynamique en tenant compte des distances de freinage en ERTMS vis-&agrave;-vis des rep&egrave;res. Cette fonctionnalit&eacute;, utilis&eacute;e dans les tests de robustesse et les tests stochastiques, permet de reproduire seconde apr&egrave;s seconde un sc&eacute;nario d&rsquo;exploitation en situation perturb&eacute;e en injectant des retards et en appliquant des actions op&eacute;rationnelles pour r&eacute;duire les perturbations.</p>
+</div>
+<div class="v21 ps244 s224 c11 z237">
+<p class="p62 f54">Animation</p>
+</div>
+<div class="v21 ps245 s238 c11 z238">
+<p class="p63 f53">RailLab permet de repr&eacute;senter l&rsquo;infrastructure et les circulations mod&eacute;lis&eacute;es dans un plan de transport seconde apr&egrave;s seconde y compris avec la signalisation ERTMS. Il est ainsi possible d&rsquo;animer une grille horaire pour visualiser la circulations des trains de mani&egrave;re r&eacute;aliste, les cantons occup&eacute;s et les distances de freinage en temps r&eacute;el.</p>
+</div>
+</div>
+</div>
+<div class="v21 ps246 s239 c11 z239">
+<a href="images/2/calcul-ertms-560.jpg" data-webp="images/0/calcul-ertms-560.webp" class="a10 un58"><picture><source srcset="images/r/calcul-ertms-616.webp 2x" type="image/webp" media="(max-width:479px)"><source srcset="images/t/calcul-ertms-616.jpg 2x" media="(max-width:479px)"><source srcset="images/j/calcul-ertms-926.webp 2x" type="image/webp" media="(max-width:959px)"><source srcset="images/j/calcul-ertms-926.jpg 2x" media="(max-width:959px)"><source srcset="images/j/calcul-ertms-448.webp 1x" type="image/webp" media="(max-width:1199px)"><source srcset="images/n/calcul-ertms-448.jpg 1x" media="(max-width:1199px)"><source srcset="images/v/calcul-ertms-560.webp 1x" type="image/webp" media="(min-width:1200px)"><source srcset="images/j/calcul-ertms-560.jpg 1x" media="(min-width:1200px)"><img src="images/j/calcul-ertms-560.jpg" loading="lazy" class="i43"></picture></a>
+</div>
+</div>
+</div>
+</div>
+<div class="c88">
+</div>
+<script>dpth="/"</script>
+<script type="text/javascript" src="js/plyr3.2581a7.js"></script>
+<script type="text/javascript" src="js/menu.2581a7.js"></script>
+<script type="text/javascript" src="js/menu-dropdown-animations.2581a7.js"></script>
+<script type="text/javascript" src="js/menu-dropdown.a9d3c7.js"></script>
+<script type="text/javascript" src="js/menu-dropdown-1.a9d3c7.js"></script>
+<script type="text/javascript" src="js/magnific.popup.2581a7.js"></script>
+<script type="text/javascript" src="js/ertms.a9d3c7.js"></script>
+</body>
+</html>
