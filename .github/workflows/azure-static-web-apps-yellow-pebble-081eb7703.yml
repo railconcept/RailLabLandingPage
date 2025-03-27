@@ -24,7 +24,7 @@ jobs:
         run: mkdir -p _site/ && cp -r 
           js css download images video 
           browserconfig.xml favicon.ico manifest.json robots.txt sitemap.xml 
-          index.html ertms.html ertms-english.html fonctionnalites.html raillab-introduction.html
+          index.html ertms.html ertms-english.html fonctionnalites.html features.html raillab-introduction.html 
           _site/
 
       - name: Build And Deploy
